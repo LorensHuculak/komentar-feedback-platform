@@ -11,13 +11,18 @@ class Header extends Component {
 
       case false:
         return (
-          <a href='/auth/google' className='ui google plus button'>
-            <i className='google  icon' />
-            Sign In
-          </a>
+          <div className='item'>
+            <a href='/auth/google' className='ui google plus button'>
+              <i className='google  icon' />
+              Sign In
+            </a>
+          </div>
         );
       default:
         return [
+          <div key='3' className='item'>
+            <i class='mail icon' /> {this.props.auth.credits}
+          </div>,
           <div key='1' className='item'>
             <Payments />
           </div>,
