@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
+import Landing from './Landing';
 
 //Dummy Components
-const Landing = () => <h2>Landing</h2>;
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>Create New</h2>;
 
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className='ui container' style={{ paddingTop: '55px' }}>
+          <div className='ui container' style={{ paddingTop: '100px' }}>
             <Header />
             <Route exact path='/' component={Landing} />
             <Route exact path='/surveys' component={Dashboard} />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
@@ -15,31 +17,28 @@ class Header extends Component {
           </a>
         );
       default:
-        return (
-          <a href='/api/logout' className='ui  button'>
-            Sign Out
-          </a>
-        );
+        return [
+          <div key='1' className='item'>
+            <Payments />
+          </div>,
+          <div key='2' className='item'>
+            <a href='/api/logout' className='ui  button'>
+              Sign Out
+            </a>
+          </div>
+        ];
     }
   }
   render() {
     return (
       <div className='ui large  fixed menu'>
         <div className='ui container'>
-          <a href='#' className='header item'>
-            <img className='logo' src='assets/images/logo.png' />
-            Project Name
-          </a>
+          <Link to={this.props.auth ? '/surveys' : '/'} className='header item'>
+            <img className='logo' src='assets/images/logo.png' alt='' />
+            Komentar
+          </Link>
 
-          <a className='active item'>Surveys</a>
-          <a className='item'>Add Survey</a>
-
-          <div className='right menu'>
-            <div className='item'>
-              <a className='ui button'>Log in</a>
-            </div>
-            <div className='item'>{this.renderContent()}</div>
-          </div>
+          <div className='right menu'>{this.renderContent()}</div>
         </div>
       </div>
     );
