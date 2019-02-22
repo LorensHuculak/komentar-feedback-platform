@@ -5,10 +5,8 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-
-//Dummy Components
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>Create New</h2>;
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className='ui container' style={{ paddingTop: '100px' }}>
+          <div className='ui container' style={{ paddingTop: '85px' }}>
             <Header />
             <Route exact path='/' component={Landing} />
             <Route exact path='/surveys' component={Dashboard} />
