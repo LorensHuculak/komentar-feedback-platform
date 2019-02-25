@@ -8,7 +8,7 @@ export default [
   { label: 'Description', name: 'body', noValueError: 'Please provide a body' },
   {
     label: 'Recipients',
-    name: 'emails',
+    name: 'recipients',
     noValueError: 'Please provide an email address'
   }
 ];
